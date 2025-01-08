@@ -3,7 +3,7 @@ import { sendSuccess, sendError } from '../utils/responseHandler.js';
 import { createToken } from '../utils/jwt.js';
 import { conectDB } from '../config/conecction.js';
 import {User}  from '../models/userModel.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export const login = async (req, res) => {
     try{

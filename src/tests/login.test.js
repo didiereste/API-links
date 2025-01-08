@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { conectDB } from '../config/conecction.js';
 import { login } from '../controllers/authController.js';
 import { createToken } from '../utils/jwt.js';
@@ -13,7 +13,7 @@ jest.mock('../utils/jwt.js', () => ({
     createToken: jest.fn(),
 }));
 
-jest.mock('bcrypt');
+jest.mock('bcryptjs');
 
 
 describe('POST /login', () =>{
@@ -106,7 +106,7 @@ describe('POST /login', () =>{
             message: 'Contraseña incorrecta',
         });
     });
-    
+
     it("Retornar 500 si ocurre un error generando el token", async () => {
         mockRepository.findOne.mockResolvedValue(mockUser);
         bcrypt.compare.mockResolvedValue(true);
