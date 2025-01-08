@@ -16,10 +16,6 @@ export const generateLink = async (req, res) => {
             return sendError(res, 400, 'El ID del estudiante debe ser numérico');
         }
 
-        if (!validator.isMobilePhone(telephone)) {
-            return sendError(res, 400, 'El número de teléfono no es válido');
-        }
-
         const studentRepository = conectDB.getRepository(Student);
 
         const user = await studentRepository.findOne({

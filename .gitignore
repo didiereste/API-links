@@ -1,2 +1,21 @@
+# Node modules
 node_modules/
+
+# Variables entorno
 .env
+
+# Archivos generados por la base de datos
+*.sqlite
+*.db
+
+# Archivos generados por IDEs
+.vscode/
+.idea/
+
+# Directorios de logs
+/logs
+*.log
+
+# Directorios de compilación o dist
+/dist
+/build
